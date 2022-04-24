@@ -8,12 +8,7 @@ export default function App() {
   return (
     <>
       
-      <Led ligado={ligado} setLigado={setLigado}/>
-      <a 
-      href='https://www.youtube.com'
-      target='blank'
-      >
-        Cfb Cursos</a>
+      <Led/>
     </>
 
     
