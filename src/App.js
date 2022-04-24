@@ -1,31 +1,23 @@
 import React, { useState } from 'react'
+import Nota from './components/Nota'
+import Resultado from './components/Resultado'
  
 export default function App() {
 
-  const [form,setForm] = useState({'nome':'','curso':'','ano':''})
-  const handleFormChange=(e)=>{
-    if(e.target.getAttribute('name')=='fnome'){
-      setForm({'nome':e.target.value,'curso':form.curso,"ano":form.ano})
-    }else if(e.target.getAttribute('name')=='fcurso'){
-      setForm({'nome':form.nome,'curso':e.target.value,"ano":form.ano})
-    }else if(e.target.getAttribute('name')=='fano'){
-      setForm({'nome':form.nome,'curso':form.curso,"ano":e.target.value})
-    }
-  }
-  
+  const [Nota1,setNota1]=useState(0)
+  const [Nota2,setNota2]=useState(0)
+  const [Nota3,setNota3]=useState(0)
+  const [Nota4,setNota4]=useState(0)
+
+
   return (
     <>
-      <label>Nome </label>
-      <input type='text' name='fnome' value={form.nome}onChange={(e)=>handleFormChange(e)} /><br/>
-      <label>Curso</label>
-      <input type='text' name='fcurso' value={form.curso}onChange={(e)=>handleFormChange(e)} /><br/>
-      <label>Ano</label>
-      <input type='text' name='fano' value={form.ano}onChange={(e)=>handleFormChange(e)} /><br/>
-      
-      <p>Nome Digitado: {form.nome}</p>
-      <p>Curso Digitado: {form.curso}</p>
-      <p>Ano Digitado: {form.ano}</p>
-      
+      <Nota/>
+      <Nota/>
+      <Nota/>
+      <Nota/>
+      <Resultado/>
+
     </>
     );
 }
